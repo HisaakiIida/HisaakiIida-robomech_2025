@@ -1,0 +1,70 @@
+\begin{thebibliography}{10}
+
+\bibitem{survey_on_teleop}
+S~Lichiardopol.
+\newblock A survey on teleoperation.
+\newblock 2007.
+
+\bibitem{survey_on_humanoid}
+Kourosh Darvish, Luigi Penco, Joao Ramos, Rafael Cisneros, Jerry Pratt, Eiichi
+  Yoshida, Serena Ivaldi, and Daniele Pucci.
+\newblock Teleoperation of humanoid robots: A survey.
+\newblock {\em IEEE Transactions on Robotics}, Vol.~39, No.~3, pp. 1706--1727,
+  2023.
+
+\bibitem{hydrus_xi}
+Moju Zhao, Tomoki Anzai, Kei Okada, Koji Kawasaki, and Masayuki Inaba.
+\newblock Singularity-free aerial deformation by two-dimensional multilinked
+  aerial robot with 1-dof vectorable propeller.
+\newblock {\em IEEE Robotics and Automation Letters}, Vol.~6, No.~2, pp.
+  1367--1374, 2021.
+
+\bibitem{drone_hand_haptics}
+Matteo Macchini, Thomas Havy, Antoine Weber, Fabrizio Schiano, and Dario
+  Floreano.
+\newblock Hand-worn haptic interface for drone teleoperation.
+\newblock In {\em 2020 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pp. 10212--10218, 2020.
+
+\bibitem{nimbro}
+Max Schwarz, Christian Lenz, Andre Rochow, Michael Schreiber, and Sven Behnke.
+\newblock Nimbro avatar: Interactive immersive telepresence with force-feedback
+  telemanipulation.
+\newblock In {\em 2021 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pp. 5312--5319, 2021.
+
+\bibitem{Mahvash}
+Mohsen Mahvash and Allison~M. Okamura.
+\newblock Friction compensation for a force-feedback teleoperator with
+  compliant transmission.
+\newblock In {\em Proceedings of the 45th IEEE Conference on Decision and
+  Control}, pp. 4508--4513, 2006.
+
+\bibitem{Alexis}
+Darivianakis G. Burri M. et~al Alexis, K.
+\newblock Aerial robotic contact-based inspection: planning and control.
+\newblock In {\em Auton Robot}, 2016.
+
+\bibitem{sugito}
+Nobuki Sugito, Moju Zhao, Tomoki Anzai, Takuzumi Nishio, Kei Okada, and
+  Masayuki Inaba.
+\newblock Aerial manipulation using contact with the environment by thrust
+  vectorable multilinked aerial robot.
+\newblock In {\em 2022 International Conference on Robotics and Automation
+  (ICRA)}, pp. 54--60, 2022.
+
+\bibitem{FCTMin}
+Sangyul Park, Jeongseob Lee, Joonmo Ahn, Myungsin Kim, Jongbeom Her, Gi-Hun
+  Yang, and Dongjun Lee.
+\newblock Odar: Aerial manipulation platform enabling omnidirectional wrench
+  generation.
+\newblock {\em IEEE/ASME Transactions on Mechatronics}, Vol.~23, No.~4, pp.
+  1907--1918, 2018.
+
+\bibitem{wrench_est}
+A.~de~Luca and R.~Mattone.
+\newblock Sensorless robot collision detection and hybrid force/motion control.
+\newblock In {\em Proceedings of the 2005 IEEE International Conference on
+  Robotics and Automation}, pp. 999--1004, 2005.
+
+\end{thebibliography}

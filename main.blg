@@ -1,0 +1,61 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: junsrt.bst
+Database file #1: bib.bib
+Warning--empty journal in survey_on_teleop
+Too many commas in name 1 of "Alexis, K., Darivianakis, G., Burri, M. et al" for entry Alexis
+while executing---line 1216 of file junsrt.bst
+Too many commas in name 1 of "Alexis, K., Darivianakis, G., Burri, M. et al" for entry Alexis
+while executing---line 1216 of file junsrt.bst
+Too many commas in name 1 of "Alexis, K., Darivianakis, G., Burri, M. et al" for entry Alexis
+while executing---line 1216 of file junsrt.bst
+Too many commas in name 1 of "Alexis, K., Darivianakis, G., Burri, M. et al" for entry Alexis
+while executing---line 1216 of file junsrt.bst
+Too many commas in name 1 of "Alexis, K., Darivianakis, G., Burri, M. et al" for entry Alexis
+while executing---line 1216 of file junsrt.bst
+Too many commas in name 1 of "Alexis, K., Darivianakis, G., Burri, M. et al" for entry Alexis
+while executing---line 1216 of file junsrt.bst
+You've used 10 entries,
+            2270 wiz_defined-function locations,
+            602 strings with 6241 characters,
+and the built_in function-call counts, 4213 in all, are:
+= -- 324
+> -- 136
+< -- 14
++ -- 52
+- -- 42
+* -- 219
+:= -- 495
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 10
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 262
+empty$ -- 402
+format.name$ -- 84
+if$ -- 1063
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 53
+num.names$ -- 10
+pop$ -- 75
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 227
+stack$ -- 0
+substring$ -- 275
+swap$ -- 105
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 26
+width$ -- 12
+write$ -- 109
+is.kanji.str$ -- 131
+(There were 6 error messages)
