@@ -5,6 +5,7 @@
 \usepackage{bm}
 \usepackage{here}
 \usepackage{siunitx}
+\usepackage{subcaption}
 
 \begin{document}
 \makeatletter
@@ -55,13 +56,120 @@ Therefore, this study aims to design a three-fingered tendon-driven hand powered
 \section{序論}
 これまで、制約の少ない空路を利用した物体搬送や工場設備等の監視業務用インフラとして飛行ロボットを利用する企業や研究が現れ、飛行ロボットの社会進出が進んできた。近年、飛行ロボットに期待される役割はより複雑化し、飛行ロボットが単体で実行する空撮などのタスクから、外部の物体や環境との物理接触を含む高度な作業へ移行している。特に高所での作業や電線工事など、人間の作業員が行っていた危険作業を飛行ロボットに代替させる事例が増えている。複雑タスクの実行可能化に関して、複数の劣駆動機体による協調作業を扱った研究が行われている。しかし複数機体間での連携は単一機体の場合に比べて困難かつ不安定であり、機体の導入にも多くのコストがかかるという問題がある。自由度が高い全駆動機体を用いた研究も行われているが、飛行や作業に伴って消費する電力量が大きくなるため、長時間の駆動が難しくなるという問題がある。そこで本研究では、全駆動飛行ロボットの安定した機体制御性と単一機体での複数タスク実行能力を両立しつつ、消費電力を低減させることで長時間駆動を可能にすることを目指す。
 
-消費電力の低減に関して、環境物体に結合し自重を支持することでロータの推力を用いず空中に留まるパーチングが研究されている。現状では機体の上部または下部に手先機構を持つものが多くを占めるが、結合目標位置周辺に突出部や壁面が存在する場合では機体が環境物体と接触するリスクがあるため、両者ともに結合時のアプローチ方向や結合位置の制限を強く受ける。よって、本研究では手先機構を機体に対して水平に配置し、横方向から結合アプローチを行う手法を用い、結合から離陸、解離までの機体制御手法をペンデュラム・パーチングとして提案する。
+消費電力の低減に関して、環境物体に結合し自重を支持することでロータの推力を用いず空中に留まるパーチングが研究されている。現状では機体の上部または下部にハンド機構を持つものが多くを占めるが、結合目標位置周辺に突出部や壁面が存在する場合では機体が環境物体と接触するリスクがあるため、両者ともに結合時のアプローチ方向や結合位置の制限を強く受ける。一方、固定翼型飛行ロボットにおいては横方向からの結合アプローチに関する研究例がある。このようなパーチングは特に壁面への結合過程において、前述した機体と環境物体との接触リスクを低減可能であるが、固定翼型飛行ロボットは回転翼式飛行ロボットに比べて空中定位可能性や姿勢制御性に欠けるため、タスク実行能力が低い。
 
-単一機体による複数タスク実行に関して、既存研究では予め特定タスク専用のツールを組み込んだ機体を使用するものが多く、タスク数に応じてペイロードが圧迫される。この問題はアタッチメント交換方式により解決可能であり、事前に予測しえない形状のツールや物体の把持が可能な飛行ロボットの研究がGripper Droneとして進められている。先述したパーチングのための手先機構とGripperをともに飛行ロボットに搭載することで、消費電力の低減と複数タスクの実行を両立可能であると考えられる。しかしこれらのハンドの機能が独立している場合では、パーチング機構が飛行中に無駄なペイロードとなるなどの問題があり、最適な設計とは言えない。よって本研究では、パーチングと物体把持をともに行えるハンド機構を開発し、飛行ロボットに搭載する。
+\begin{figure}[tb]
+  \centering
+  \begin{subfigure}{0.25\columnwidth}
+    \includegraphics[width=\textwidth]{figs/collision.eps}
+    \vspace{-6mm}
+    \caption{}
+    \label{fig:pgimage}
+  \end{subfigure}
+  \begin{subfigure}{0.68\columnwidth}
+    \includegraphics[width=\textwidth]{figs/perching_grasping.eps}
+    \vspace{-6mm}
+    \caption{}
+    \label{fig:pgimage}
+  \end{subfigure}
+  \vspace{2mm}
+  \caption{Perching and grasping image}
+  \vspace{-3mm}
+\end{figure}
 
+加えて、ハンド機構の軽量化を行うことで機体重量が低下するため、さらに消費電力を削減可能である。パーチングのためのハンド機構の駆動方式は弾性、腱駆動、自重の利用などに分けられるが、自重駆動では結合方向が厳しく限られ、弾性駆動ではハンドが発揮する力や指関節の角度の制御が難しい。一方で腱駆動はこれらの欠点を持たず、さらに高い機械的コンプライアンスや動力位置自由度の高さなど飛行ロボットに適した特性を備えているが、アクチュエータ数が多くなりやすい。よって本研究では、腱駆動機構および少数アクチュエータを用いたハンド機構を全駆動飛行ロボットの機体に対して水平に配置し、アプローチから結合、離陸、解離までの機体制御手法をペンデュラム・パーチングとして提案する。
 
+また単一機体による複数タスク実行に関して、既存研究では予め特定タスク専用のツールを組み込んだ機体を使用するものが多く、タスク数に応じてペイロードが圧迫される。この問題はアタッチメント交換方式により解決可能であり、事前に予測しえない形状のツールや物体の把持が可能な飛行ロボットの研究がGripper Droneとして進められている。先述したパーチングのための手先機構とGripperをともに飛行ロボットに搭載することで、消費電力の低減と複数タスクの実行を両立可能であると考えられる。しかしこれらのハンドの機能が独立している場合では、パーチング機構が飛行中に無駄なペイロードとなるなどの問題があり、最適な設計とは言えない。よって本研究では、パーチングと物体把持をともに行えるハンド機構を開発し、飛行ロボットに搭載する。
+
+本研究のコントリビューションは以下のとおりである。
+
+\begin{itemize}
+  \item パーチングと従動的な物体把持が可能な飛行ロボットのための軽量な単一動力腱駆動ハンドの設計を提案する。
+  \item 水平方向を中心とする多方向からのペンデュラム・パーチングおよび垂直状態からの離陸のための動作設計を提案する。
+  \item 提案したハンドを搭載した飛行ロボットを用いてパーチングおよび離陸の実証実験を行った。
+\end{itemize}
 
 \section{ハンドの設計}
+\subsection{ハンドの力学モデル}
+\begin{figure}[h]
+  \vspace{-2mm}
+  \centering
+  \includegraphics[width=0.8\columnwidth]{figs/cs-tdm.eps}
+  \caption{CS-TDM finger module}
+  \label{fig:cs-tdm}
+  \vspace{-2mm}
+\end{figure}
+一般的な全駆動腱駆動では関節数と自由度は同一であり、少なくとも関節数と同数のアクチュエータが必要となるため機構全体の重量が大きくなり、飛行ロボットには適さない。軽量かつ従動性を持ち少数のアクチュエータで駆動可能なハンドモデルとして、本研究では劣駆動機構である可制御半腱駆動(CS-TDM)を用いる。CS-TDMの力学モデルは腱の伸長$\bm{l}$、関節角度$\bm{theta}$、アクチュエータ回転角度$\bm{\phi}$を用いて以下のように表される。
+\vspace{-2mm}
+\begin{equation}
+  \left[ \begin{array}{c} \bm{l}_\text{a}\\ \bm{l}_\text{p} \end{array} \right] = \left[ \bm{J}_j \right] \bm{\dot{\theta}} + \left[ \bm{J}_s \right] \bm{\dot{\phi}} = \left[ \begin{array}{c} \bm{J}_\text{ja}\\ \bm{J}_\text{jp} \end{array} \right]  \bm{\dot{\theta}} + \left[ \begin{array}{c} \bm{J}_\text{sa}\\ \bm{0} \end{array} \right] \bm{\dot{\phi}}。
+  \vspace{-2mm}
+  \label{equ:lmatrix}
+\end{equation}
+ただし、$\bm{J}_j、\bm{J}_s$はそれぞれ関節・アクチュエータプーリ径に依存する定数行列であり、添字$a$は駆動腱、$p$は受動腱を表す。CS-TDMの構成条件は$rank\bm{J}_j = N$かつ$0 < rank\bm{J}_a < N$であり、劣駆動ながら物体把持に伴って指形状が一意に定まるため、従動的に強い把持を行うことができる。腱の伸長を0、関節プーリ径を$R_1 = R_2 = \cdots = R_N$とし、式\ref{equ:lmatrix}の受動腱部分を抜き出して積分した形に変形すると、以下のように表される。
+\vspace{-2mm}
+\begin{equation}
+  \bm{0} = \left[ \begin{array}{cccc} R_1 & 0 & \cdots & 0 \\
+    0 & R_1 & \cdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \cdots & R_1
+  \end{array} \right]
+  \left[ \begin{array}{c} \theta_1 - \theta_2 \\
+    \theta_2 - \theta_3 \\
+    \vdots \\
+    \theta_{\text{N-1}} - \theta_N
+  \end{array} \right]。
+  \label{passivematrixshort}
+  \vspace{-2mm}
+\end{equation}
+ゆえに$\theta_1 = \theta_2 = \cdots = \theta_N$が導かれる。そこで本研究では人間の指構造と同一の4リンクからなるCS-TDMを構築し、関節プーリ径の統一により指形状を直線-正方折り畳み状態間で遷移可能とする。これにより、各指を2アクチュエータで駆動できる。
+
+\subsection{トライフォース機構}
+Neginらにより、レバー状の差動機構を用いて劣駆動ハンド機構を少数のアクチュエータで稼働する既存研究が提案されている。しかしこの機構では4本の指モジュールに対して差動機構の自由度が2であるため、物体把持時のハンド形状は指モジュールの初期状態に依存する。従って、物体形状によっては輪郭に従動的な追従を行えない。本研究ではこの課題を解決するため、より自由度の高い差動装置を利用することを考える。
+
+図\ref{fig:differential}に示すように、三角形状の2次元差動板に球体関節を接続することで自由度4の差動機構を構築可能となるが、主腱まわりの回転が与える影響は小さいため実際の自由度は3とみなせる。故にこの差動機構により、前項のCS-TDMモジュールを用いて構築した3指ハンドの各指を初期状態によらない任意の状態へ従動的に駆動しうる。図\ref{fig:diff_2}のように差動板と屈腱の接点の座標をとると、差動機構の並進・回転により各指が任意の状態をとれる条件は屈腱の最大変位$d_\text{max}$を用いて以下のように表される。
+\vspace{-2mm}
+\begin{equation}
+  0 < \frac{d_{\text{max}}}{r_{\text{1z}} - r_{\text{2z}}} < 1、0 < \frac{d_{\text{max}}}{2r_{\text{2y}}} < 1。
+  \label{equ:jouken}
+  \vspace{-2mm}
+\end{equation}
+さらに伸腱に対しても差動機構を作成し、主腱により2枚の差動板とアクチュエータプーリを接続し両側駆動系とすることで、ハンド全体を単一のアクチュエータで駆動することが可能となる。これにより、最小動力数での駆動および従動的な物体把持が可能なハンドの設計条件が与えられた。本研究では、この差動機構をトライフォース機構と呼称する。
+
+\begin{figure}[tb]
+  \vspace{-2mm}
+  \centering
+  \includegraphics[width=0.8\columnwidth]{figs/differential.eps}
+  \caption{CS-TDM finger module}
+  \label{fig:differential}
+\end{figure}
+\begin{figure}[tb]
+  \vspace{-2mm}
+  \centering
+  \includegraphics[width=0.8\columnwidth]{figs/diff_2.eps}
+  \caption{two-dimensional differential}
+  \label{fig:diff_2}
+  \vspace{-2mm}
+\end{figure}
+\subsection{ハンドの支持可能重量}
+\vspace{-2mm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.3\columnwidth}
+    \includegraphics[width=\textwidth]{figs/weight1.eps}
+    \caption{}
+    \label{fig:pgimage}
+  \end{subfigure}
+  \begin{subfigure}{0.6\columnwidth}
+    \includegraphics[width=\textwidth]{figs/weight2.eps}
+    \caption{}
+    \label{fig:pgimage}
+  \end{subfigure}
+  \vspace{2mm}
+  \caption{Hand load capacity}
+  \vspace{-3mm}
+\end{figure}
+
 
 \section{飛行動作設計}
 
