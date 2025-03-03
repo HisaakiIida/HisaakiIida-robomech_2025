@@ -91,34 +91,30 @@ Therefore, this study aims to design a three-fingered tendon-driven hand powered
 
 \section{ハンドの設計}
 \subsection{ハンドの力学モデル}
+\vspace{-4mm}
 \begin{figure}[h]
-  \vspace{-2mm}
   \centering
   \includegraphics[width=0.8\columnwidth]{figs/cs-tdm.eps}
   \caption{CS-TDM finger module}
   \label{fig:cs-tdm}
   \vspace{-2mm}
 \end{figure}
-一般的な全駆動腱駆動では関節数と自由度は同一であり、少なくとも関節数と同数のアクチュエータが必要となるため機構全体の重量が大きくなり、飛行ロボットには適さない。軽量かつ従動性を持ち少数のアクチュエータで駆動可能なハンドモデルとして、本研究では劣駆動機構である可制御半腱駆動(CS-TDM)を用いる。CS-TDMの力学モデルは腱の伸長$\bm{l}$、関節角度$\bm{theta}$、アクチュエータ回転角度$\bm{\phi}$を用いて以下のように表される。
+一般的な全駆動腱駆動では関節数と自由度は同一であり、関節数と同数以上のアクチュエータが必要となるため機構全体の重量が大きく、飛行ロボットには適さない。軽量かつ従動性を持ち少数のアクチュエータで駆動可能な腱駆動機構として、本研究では可制御半腱駆動(CS-TDM)を用いる。CS-TDMは劣駆動ながら物体把持に伴って形状が一意に定まるため、従動的に強い把持を行うことができ、力学モデルは腱の伸長$\bm{l}$、関節角度$\bm{\theta}$、アクチュエータ回転角度$\bm{\phi}$を用いて以下のように表される。
 \vspace{-2mm}
 \begin{equation}
-  \left[ \begin{array}{c} \bm{l}_\text{a}\\ \bm{l}_\text{p} \end{array} \right] = \left[ \bm{J}_j \right] \bm{\dot{\theta}} + \left[ \bm{J}_s \right] \bm{\dot{\phi}} = \left[ \begin{array}{c} \bm{J}_\text{ja}\\ \bm{J}_\text{jp} \end{array} \right]  \bm{\dot{\theta}} + \left[ \begin{array}{c} \bm{J}_\text{sa}\\ \bm{0} \end{array} \right] \bm{\dot{\phi}}。
+  \left[ \begin{array}{c} \bm{l}_\text{a}\\ \bm{l}_\text{p} \end{array} \right] = \left[ \bm{J}_j \right] \bm{\dot{\theta}} + \left[ \bm{J}_s \right] \bm{\dot{\phi}} = \left[ \begin{array}{c} \bm{J}_\text{ja}\\ \bm{J}_\text{jp} \end{array} \right]  \bm{\dot{\theta}} + \left[ \begin{array}{c} \bm{J}_\text{sa}\\ \bm{0} \end{array} \right] \bm{\dot{\phi}}
   \vspace{-2mm}
   \label{equ:lmatrix}
 \end{equation}
-ただし、$\bm{J}_j、\bm{J}_s$はそれぞれ関節・アクチュエータプーリ径に依存する定数行列であり、添字$a$は駆動腱、$p$は受動腱を表す。CS-TDMの構成条件は$rank\bm{J}_j = N$かつ$0 < rank\bm{J}_a < N$であり、劣駆動ながら物体把持に伴って指形状が一意に定まるため、従動的に強い把持を行うことができる。腱の伸長を0、関節プーリ径を$R_1 = R_2 = \cdots = R_N$とし、式\ref{equ:lmatrix}の受動腱部分を抜き出して積分した形に変形すると、以下のように表される。
+ただし、$\bm{J}_j、\bm{J}_s$はそれぞれ関節・アクチュエータプーリ径に依存する定数行列であり、添字$a$は駆動腱、$p$は受動腱に関する部分であることを表す。図\ref{fig:cs-tdm}に示したCS-TDMの構成条件は$rank\bm{J}_j = 3$かつ$0 < rank\bm{J}_\text{ja} < 3$であり、腱の伸長を0、関節プーリ径を$R_1 = R_2 = R_3$とし、式\ref{equ:lmatrix}の受動腱部分を抜き出して積分した形に変形すると、以下のように表される。
 \vspace{-2mm}
 \begin{equation}
-  \bm{0} = \left[ \begin{array}{cccc} R_1 & 0 & \cdots & 0 \\
-    0 & R_1 & \cdots & 0 \\
-    \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & \cdots & R_1
+  \bm{0} = \left[ \begin{array}{cccc} R_1 & 0 \\
+    0 & R_1
   \end{array} \right]
   \left[ \begin{array}{c} \theta_1 - \theta_2 \\
-    \theta_2 - \theta_3 \\
-    \vdots \\
-    \theta_{\text{N-1}} - \theta_N
-  \end{array} \right]。
+    \theta_2 - \theta_3
+  \end{array} \right]
   \label{passivematrixshort}
   \vspace{-2mm}
 \end{equation}
@@ -130,7 +126,7 @@ Neginらにより、レバー状の差動機構を用いて劣駆動ハンド機
 図\ref{fig:differential}に示すように、三角形状の2次元差動板に球体関節を接続することで自由度4の差動機構を構築可能となるが、主腱まわりの回転が与える影響は小さいため実際の自由度は3とみなせる。故にこの差動機構により、前項のCS-TDMモジュールを用いて構築した3指ハンドの各指を初期状態によらない任意の状態へ従動的に駆動しうる。図\ref{fig:diff_2}のように差動板と屈腱の接点の座標をとると、差動機構の並進・回転により各指が任意の状態をとれる条件は屈腱の最大変位$d_\text{max}$を用いて以下のように表される。
 \vspace{-2mm}
 \begin{equation}
-  0 < \frac{d_{\text{max}}}{r_{\text{1z}} - r_{\text{2z}}} < 1、0 < \frac{d_{\text{max}}}{2r_{\text{2y}}} < 1。
+  0 < \frac{d_{\text{max}}}{r_{\text{1z}} - r_{\text{2z}}} < 1、0 < \frac{d_{\text{max}}}{2r_{\text{2y}}} < 1
   \label{equ:jouken}
   \vspace{-2mm}
 \end{equation}
@@ -158,22 +154,77 @@ Neginらにより、レバー状の差動機構を用いて劣駆動ハンド機
   \begin{subfigure}{0.3\columnwidth}
     \includegraphics[width=\textwidth]{figs/weight1.eps}
     \caption{}
-    \label{fig:pgimage}
+    \label{fig:weight1}
   \end{subfigure}
   \begin{subfigure}{0.6\columnwidth}
     \includegraphics[width=\textwidth]{figs/weight2.eps}
     \caption{}
-    \label{fig:pgimage}
+    \label{fig:weight2}
   \end{subfigure}
   \vspace{2mm}
   \caption{Hand load capacity}
-  \vspace{-3mm}
+  \vspace{-2mm}
 \end{figure}
-
-
+図\ref{fig:weight1}に示すような細い円柱形状の把持では、モーメントアーム$l_1、l_2$および指に働く力$f_1$は以下のように表される。
+\vspace{-2mm}
+\begin{equation}
+  l_1 = \frac{l}{2\cos(2\alpha)}、l_2 = l_1 + l\sin(\alpha)、f_1 = \frac{mg}{3\cos(2\alpha)}
+  \vspace{-2mm}
+\end{equation}
+$\alpha$は指関節開き角、mは荷重であり、$l_1$は$\alpha$が十分に小さいとして近似した。また腱を関節プーリに巻きつけることによる張力の増加を考えると、支持可能重量の条件式はアクチュエータストールトルク$\tau_\text{st}$、ギア減速比$c$、アクチュエータプーリ径$R_\text{gp}$および摩擦係数$\mu$を用いて書き表せる。
+\vspace{-2mm}
+\begin{equation}
+  3\frac{f_1l_1 + f_1l_2}{R_1} \leq c \frac{\tau_\text{st}}{R_\text{gp}} e^{\mu(2\pi + \alpha)}
+  \vspace{-2mm}
+  \label{equ:jouken}
+\end{equation}
+\begin{equation}
+  m_{\text{maxa}} = \frac{\tau_{\text{st}} R_1 c e^{\mu(2\pi + \alpha)}}{g l R_{\text{gp}}} \cdot \frac{\cos^2(2\alpha)}{\sin(\alpha) \cos(2\alpha) + 1}
+  \label{equ:mmaxa}
+\end{equation}
+$m_\text{maxa}$は$\alpha$の増加に伴って単調に減少するが、$\alpha = \pi/10$においてハンドは図\ref{fig:weight2}の状態に遷移し、最大荷重は以下のようである。
+\vspace{-2mm}
+\begin{equation}
+  m_{\text{maxb}} = \frac{\tau_{\text{st}} R_1 c e^{\mu \frac{21\pi}{10}}}{g l R_{\text{gp}}} \cdot \frac{4 \cos^2(2\alpha)}{4\sin(\alpha)\cos(2\alpha) + 5\cos(2\alpha) - 1}
+  \label{equ:mmaxb}
+\end{equation}
+実際の設計においては、$m_\text{maxa}およびm_\text{maxb}$がパーチング過程においてハンドに作用する力を十分に上回る必要がある。
 \section{飛行動作設計}
+提案したペンデュラム・パーチングにおいて、機体はハンドを介して環境物体に拘束され、さらに垂直近傍まで大きく傾斜することがありうる。本項ではこのような特異状態下における機体の動作計画について述べる。
+
+本研究で使用したベース機体は推力偏向機構を持つ8自由度の全駆動クアッドロータであり、目標機体位置に関するPID制御によるコントロールを行う。しかし機体が環境物体と結合した状態においては、目標位置入力への到達が必ずしも可能であるとは限らない。よって機体の目標pitch角度$\theta_p^\text{des}$を入力として取り、制御開始地点$\bm{r}^\text{bottom}$における機体のpitch、yaw角度$\theta_p、\theta_y$から機体が到達すべき目標位置$\bm{r}^\text{des}$を以下のように算出する。
+\vspace{-2mm}
+\begin{equation}
+  \bm{r}^\text{des} = \bm{r}^\text{bottom} -
+  \left[ \begin{array}{c} l_h(\cos(\theta_p^\text{des}) - \cos(\theta_p))\cos(\theta_y) \\
+      l_h(\cos(\theta_p^\text{des}) - \cos(\theta_p))\sin(\theta_y) \\
+      -l_h(\sin(\theta_p^\text{des}) - \sin(\theta_p))
+    \end{array} \right]
+  \vspace{-2mm}
+  \label{eq:rset}
+\end{equation}
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.6\columnwidth]{figs/rset.eps}
+  \caption{Takeoff control in pendulum-perching}
+  \vspace{-4mm}
+  \label{fig:rset}
+\end{figure}
+これにより機体は推力の範囲内で任意のpitch角度に到達可能となるが、$\theta_p$と$\theta_p^\text{des}$が大きく異なる場合は離陸に時間を要するため、蓄積した積分要素により解離直後に飛行が不安定となりうる。よって結合中はz座標のみPID制御を行い、その他の制御要素についてはPD制御を行うことで離陸動作を安定化する。
 
 \section{実験}
+\subsection{実装}
+\vspace{-2mm}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\columnwidth]{figs/zissou.eps}
+  \caption{Hand detail}
+  \vspace{-2mm}
+  \label{fig:zissou}
+\end{figure}
+ハンドの実制作にあたり、軽量性を重視しPLA素材とCFRPパイプを用いた。アクチュエータとしてDynamixel XH350-W210Rを採用し、山歯歯車により2倍に減速した。またステンレスワイヤと止めねじにより各指内部に3層の腱構造を構築した。ハンド全体の重量はおよそ390gとなった。
+\subsection{ハンドの物体把持能力の検証}
+
 
 \section{結論と今後の展望}
 
