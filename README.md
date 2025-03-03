@@ -1,4 +1,5 @@
 Use .eps for figures.
+
 How to convert:
 ```
 convert figs/hoge.png eps3:figs/hoge.eps
