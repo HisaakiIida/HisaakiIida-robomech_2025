@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190908-2.6 (utf8.euc) (TeX Live 2019/Debian) (preloaded format=platex 2025.1.8)  4 MAR 2025 03:35
+This is e-pTeX, Version 3.14159265-p3.8.2-190908-2.6 (utf8.euc) (TeX Live 2019/Debian) (preloaded format=platex 2025.1.8)  5 MAR 2025 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -258,6 +258,9 @@ LaTeX Warning: Label `sub@fig:pgimage' multiply defined.
 
 LaTeX Warning: Label `equ:jouken' multiply defined.
 
+
+LaTeX Warning: Label `fig:zissou' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -341,19 +344,16 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 File: figs/collision.eps Graphic file (type eps)
 <figs/collision.eps>
 File: figs/perching_grasping.eps Graphic file (type eps)
- <figs/perching_grasping.eps>
-Underfull \vbox (badness 1448) has occurred while \output is active []
-
- [1
+ <figs/perching_grasping.eps> [1
 
 
 
 ]
 File: figs/cs-tdm.eps Graphic file (type eps)
-
-<figs/cs-tdm.eps>
+ <figs/cs-tdm.eps>
 File: figs/differential.eps Graphic file (type eps)
- <figs/differential.eps>
+
+<figs/differential.eps>
 File: figs/diff_2.eps Graphic file (type eps)
  <figs/diff_2.eps>
 File: figs/weight1.eps Graphic file (type eps)
@@ -364,7 +364,14 @@ File: figs/weight2.eps Graphic file (type eps)
 File: figs/rset.eps Graphic file (type eps)
  <figs/rset.eps>
 File: figs/zissou.eps Graphic file (type eps)
- <figs/zissou.eps> (./main.bbl
+ <figs/zissou.eps>
+File: figs/graspexp.eps Graphic file (type eps)
+ <figs/graspexp.eps>
+File: figs/bear1.eps Graphic file (type eps)
+
+<figs/bear1.eps>
+File: figs/bear2.eps Graphic file (type eps)
+ <figs/bear2.eps> (./main.bbl
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 (Font)              using `JT1/gt/m/n' instead on input line 12.
@@ -387,12 +394,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5730 strings out of 482790
- 123512 string characters out of 5957637
- 364055 words of memory out of 5000000
- 20992 multiletter control sequences out of 15000+600000
+ 5747 strings out of 482790
+ 123779 string characters out of 5957637
+ 363055 words of memory out of 5000000
+ 21006 multiletter control sequences out of 15000+600000
  552729 words of font info for 101 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 48i,14n,46p,957b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,14n,46p,957b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (3 pages, 28628 bytes).
+Output written on main.dvi (3 pages, 32316 bytes).
