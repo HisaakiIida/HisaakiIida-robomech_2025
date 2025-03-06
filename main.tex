@@ -232,7 +232,7 @@ $m_\text{maxa}$は$\alpha$の増加に伴って単調に減少するが、$\alph
 \vspace{-2mm}
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\columnwidth]{figs/graspexp.eps}
+  \includegraphics[width=0.8\columnwidth]{figs/grasping.eps}
   \caption{Grasping experiment with various shape objects}
   \vspace{-2mm}
   \label{fig:zissou}
@@ -253,13 +253,57 @@ $m_\text{maxa}$は$\alpha$の増加に伴って単調に減少するが、$\alph
     \caption{}
     \label{fig:bear2}
   \end{subfigure}
-  \vspace{2mm}
+  \vspace{1mm}
   \caption{Perching and grasping image}
-  \vspace{-5mm}
+  \vspace{-4mm}
 \end{figure}
 図\ref{fig:bear1}に示すように、直径24mmのCFRPパイプにハンドを結合させ、機体に2.5kgずつ重量を付加した。また式\ref{equ:mmaxb}から、制作したハンドが支持可能な最大重量は29.6kgと算出されたが、結果として機体自重の約11倍である27.5kgに達した時点で主腱の破断が生じた。実験後に致命的な指構造の破壊はみられなかったため、主腱の引張強度不足が原因であると考えられる。図\ref{fig:bear2}は腱破断までのサーボ負荷のプロットである。プロットからサーボ負荷は全体を通して平坦であるが、17.5kgを付加したt=450s付近で小さな段差が見られる。この時点においてハンドが図\ref{fig:weight2}の状態へ移行する様子が観察されたため、第2章で述べた支持可能重量の急激なジャンプによりサーボ負荷が一時的に上昇したものと考えられる。この結果から、トライフォース・ハンドは自重に対して十分に大きな重量を支持可能であることが示された。
 \subsection{ペンデュラム・パーチングおよび離陸検証}
-提案した機体構成によるパーチングの検証試験として、図\ref{fig:bear1}の実験装置を用い、CFRPパイプおよび20mm四方の角柱への結合/解離試験を行った。離陸時には第3章で述べた動作計画を用いた。
+\vspace{-2mm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.38\columnwidth}
+    \includegraphics[width=\textwidth]{figs/attaching.eps}
+    \vspace{-6mm}
+    \caption{}
+    \label{fig:perching1}
+  \end{subfigure}
+  \begin{subfigure}{0.38\columnwidth}
+    \includegraphics[width=\textwidth]{figs/detaching.eps}
+    \vspace{-6mm}
+    \caption{}
+    \label{fig:perching2}
+  \end{subfigure}
+  \vspace{1mm}
+  \caption{Perching experiment}
+  \label{fig:perching}
+  \vspace{-4mm}
+\end{figure}
+\vspace{-2mm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.38\columnwidth}
+    \includegraphics[width=\textwidth]{figs/plot1.eps}
+    \vspace{-6mm}
+    \caption{}
+    \label{fig:plot1}
+  \end{subfigure}
+  \begin{subfigure}{0.38\columnwidth}
+    \includegraphics[width=\textwidth]{figs/plot2.eps}
+    \vspace{-6mm}
+    \caption{}
+    \label{fig:plot2}
+  \end{subfigure}
+  \vspace{1mm}
+  \caption{Plots of position and angle during perching}
+  \label{fig:plot}
+  \vspace{-2mm}
+\end{figure}
+提案した機体構成によるパーチングの検証試験として、図\ref{fig:bear1}の実験装置を用い、直径24mmの円柱および20mm四方の角柱への結合/解離試験を行った。姿勢制御には第3章で述べた動作計画を用いた。図\ref{fig:perching}に円柱への結合・解離実験時の様子を示す。また、図\ref{fig:plot1}に円柱へのパーチングアプローチから解離までの機体位置と目標位置の誤差、および機体角度のプロットを示す。
+
+プロットから、離陸過程において機体位置が正しく目標位置に収束していることが読み取れる。また積分要素の再計算により、解離直後のx方向における目標位置の大きな変化にも追従できている。y座標に見られる5cm前後の誤差は、各指モジュールが同時に開閉しないことにより解離時の結合抵抗が左右で均一とならず、機体が左右に振れたことが原因であると考えられる。
+
+図\ref{fig:plot2}は角柱への結合/解離試験における機体位置と角度のプロットである。円柱とは異なり、角柱へのペンデュラム・パーチングの実行においては結合物体の直径が機体の回転に伴って変化する。従って強く把持した状態で着陸動作を行った場合、指を開く方向への力によってサーボモータに強い負荷が生じ、オーバーロードに繋がる可能性がある。この問題への対処として、結合時にハンドの握りを意図的に緩めることでサーボモータのオーバーロードを防ぎつつ角柱へのパーチングと解離を実現した。角柱の縁と指関節の小さな抵抗により、図\ref{fig:plot2}のt=29s付近などに図\ref{fig:plot1}にはみられない揺らぎが観察されたが、振れの大きさは十分に小さく、該当部分の前後においても滑らかな動作が継続可能であった。結果として、トライフォース・ハンドおよび提案した動作計画を用いたペンデュラム・パーチングの実現可能性が示された。
 
 \section{結論と今後の展望}
 
