@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190908-2.6 (utf8.euc) (TeX Live 2019/Debian) (preloaded format=platex 2025.1.8)  7 MAR 2025 04:21
+This is e-pTeX, Version 3.14159265-p3.8.2-190908-2.6 (utf8.euc) (TeX Live 2019/Debian) (preloaded format=platex 2025.1.8)  7 MAR 2025 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -248,20 +248,7 @@ Package caption Info: float package is loaded.
 )
 \c@subfigure=\count283
 \c@subtable=\count284
-) (./main.aux
-
-LaTeX Warning: Label `fig:pgimage' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:pgimage' multiply defined.
-
-
-LaTeX Warning: Label `equ:jouken' multiply defined.
-
-
-LaTeX Warning: Label `fig:zissou' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -360,57 +347,49 @@ File: figs/weight1.eps Graphic file (type eps)
  <figs/weight1.eps>
 File: figs/weight2.eps Graphic file (type eps)
 
-<figs/weight2.eps> [2]
+<figs/weight2.eps>
+File: figs/coordinate.eps Graphic file (type eps)
+ <figs/coordinate.eps> [2]
 File: figs/rset.eps Graphic file (type eps)
  <figs/rset.eps>
 File: figs/zissou.eps Graphic file (type eps)
  <figs/zissou.eps>
 File: figs/grasping.eps Graphic file (type eps)
- <figs/grasping.eps>
-File: figs/bear1.eps Graphic file (type eps)
 
-<figs/bear1.eps>
+<figs/grasping.eps>
+File: figs/bear1.eps Graphic file (type eps)
+ <figs/bear1.eps>
 File: figs/bear2.eps Graphic file (type eps)
  <figs/bear2.eps>
 File: figs/attaching.eps Graphic file (type eps)
  <figs/attaching.eps>
 File: figs/detaching.eps Graphic file (type eps)
- <figs/detaching.eps>
-File: figs/plot1.eps Graphic file (type eps)
 
-<figs/plot1.eps>
+<figs/detaching.eps>
+File: figs/plot1.eps Graphic file (type eps)
+ <figs/plot1.eps>
 File: figs/plot2.eps Graphic file (type eps)
  <figs/plot2.eps> [3] (./main.bbl
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
-(Font)              using `JT1/gt/m/n' instead on input line 12.
+(Font)              using `JT1/gt/m/n' instead on input line 8.
 
 
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
-(Font)              using `JY1/gt/m/n' instead on input line 12.
+(Font)              using `JY1/gt/m/n' instead on input line 8.
 
-
-Underfull \hbox (badness 1946) in paragraph at lines 30--35
-[]\OT1/cmr/m/n/8 Max Schwarz, Chris-tian Lenz, An-dre Ro-chow, Michael
- []
-
-) [4
-
-] (./main.aux)
+) [4] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 5773 strings out of 482790
- 124211 string characters out of 5957637
+ 5793 strings out of 482790
+ 124478 string characters out of 5957637
  363055 words of memory out of 5000000
- 21028 multiletter control sequences out of 15000+600000
+ 21047 multiletter control sequences out of 15000+600000
  552729 words of font info for 101 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 48i,14n,46p,957b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,14n,46p,992b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (4 pages, 35908 bytes).
+Output written on main.dvi (4 pages, 44332 bytes).

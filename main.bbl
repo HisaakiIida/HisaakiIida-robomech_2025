@@ -1,70 +1,114 @@
 \begin{thebibliography}{10}
 
-\bibitem{survey_on_teleop}
-S~Lichiardopol.
-\newblock A survey on teleoperation.
-\newblock 2007.
+\bibitem{observation}
+Rogerio Bonatti, Yanfu Zhang, Sanjiban Choudhury, Wenshan Wang, and Sebastian
+  Scherer.
+\newblock Autonomous drone cinematographer: Using artistic principles to create
+  smooth, safe, occlusion-free trajectories for aerial filming.
+\newblock In Jing Xiao, Torsten Kr{\"o}ger, and Oussama Khatib, editors, {\em
+  Proceedings of the 2018 International Symposium on Experimental Robotics},
+  pages 119--129, Cham, 2020. Springer International Publishing.
 
-\bibitem{survey_on_humanoid}
-Kourosh Darvish, Luigi Penco, Joao Ramos, Rafael Cisneros, Jerry Pratt, Eiichi
-  Yoshida, Serena Ivaldi, and Daniele Pucci.
-\newblock Teleoperation of humanoid robots: A survey.
-\newblock {\em IEEE Transactions on Robotics}, Vol.~39, No.~3, pp. 1706--1727,
-  2023.
+\bibitem{disaster}
+Nathan Michael, Shaojie Shen, Kartik Mohta, Vijay Kumar, Keiji Nagatani,
+  Yoshito Okada, Seiga Kiribayashi, Kazuki Otake, Kazuya Yoshida, Kazunori
+  Ohno, Eijiro Takeuchi, and Satoshi Tadokoro.
+\newblock {\em Collaborative Mapping of an Earthquake Damaged Building via
+  Ground and Aerial Robots}, pages 33--47.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2014.
 
-\bibitem{hydrus_xi}
-Moju Zhao, Tomoki Anzai, Kei Okada, Koji Kawasaki, and Masayuki Inaba.
-\newblock Singularity-free aerial deformation by two-dimensional multilinked
-  aerial robot with 1-dof vectorable propeller.
-\newblock {\em IEEE Robotics and Automation Letters}, Vol.~6, No.~2, pp.
-  1367--1374, 2021.
+\bibitem{overheadperching}
+Terry Ching, Joseph Zhi~Wei Lee, Shane Kyi~Hla Win, Luke Soe~Thura Win, Danial
+  Sufiyan, Charlotte Pei~Xuan Lim, Nidhi Nagaraju, Yi-Chin Toh, Shaohui Foong,
+  and Michinao Hashimoto.
+\newblock Crawling, climbing, perching, and flying by fiba soft robots.
+\newblock {\em Science Robotics}, 9(92):eadk4533, 2024.
 
-\bibitem{drone_hand_haptics}
-Matteo Macchini, Thomas Havy, Antoine Weber, Fabrizio Schiano, and Dario
-  Floreano.
-\newblock Hand-worn haptic interface for drone teleoperation.
-\newblock In {\em 2020 IEEE International Conference on Robotics and Automation
-  (ICRA)}, pp. 10212--10218, 2020.
+\bibitem{underhandperching}
+Kaiyu Hang, Ximin Lyu, Haoran Song, Johannes~A. Stork, Aaron~M. Dollar, Danica
+  Kragic, and Fu~Zhang.
+\newblock Perching and resting—a paradigm for uav maneuvering with
+  modularized landing gears.
+\newblock {\em Science Robotics}, 4(28):eaau6637, 2019.
 
-\bibitem{nimbro}
-Max Schwarz, Christian Lenz, Andre Rochow, Michael Schreiber, and Sven Behnke.
-\newblock Nimbro avatar: Interactive immersive telepresence with force-feedback
-  telemanipulation.
-\newblock In {\em 2021 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems (IROS)}, pp. 5312--5319, 2021.
+\bibitem{horizon}
+William Stewart, Luca Guarino, Yegor Piskarev, and Dario Floreano.
+\newblock Passive perching with energy storage for winged aerial robots.
+\newblock {\em Advanced Intelligent Systems}, 5(4):2100150.
 
-\bibitem{Mahvash}
-Mohsen Mahvash and Allison~M. Okamura.
-\newblock Friction compensation for a force-feedback teleoperator with
-  compliant transmission.
-\newblock In {\em Proceedings of the 45th IEEE Conference on Decision and
-  Control}, pp. 4508--4513, 2006.
+\bibitem{horizon2}
+Raphael Zufferey, Jesus Tormo-Barbero, Daniel Feliu-Talegón, Saeed Nekoo,
+  J.~\'A Acosta, and Anibal Ollero.
+\newblock How ornithopters can perch autonomously on a branch.
+\newblock {\em Nature Communications}, 13, 12 2022.
 
-\bibitem{Alexis}
-Darivianakis G. Burri M. et~al Alexis, K.
-\newblock Aerial robotic contact-based inspection: planning and control.
-\newblock In {\em Auton Robot}, 2016.
+\bibitem{ultra}
+Andrew McLaren, Zak Fitzgerald, Geng Gao, and Minas Liarokapis.
+\newblock A passive closing, tendon driven, adaptive robot hand for ultra-fast,
+  aerial grasping and perching.
+\newblock In {\em 2019 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pages 5602--5607, 2019.
 
-\bibitem{sugito}
-Nobuki Sugito, Moju Zhao, Tomoki Anzai, Takuzumi Nishio, Kei Okada, and
-  Masayuki Inaba.
-\newblock Aerial manipulation using contact with the environment by thrust
-  vectorable multilinked aerial robot.
-\newblock In {\em 2022 International Conference on Robotics and Automation
-  (ICRA)}, pp. 54--60, 2022.
+\bibitem{armed}
+Courtney~E. Doyle, Justin~J. Bird, Taylor~A. Isom, C.~Jerald Johnson, Jason~C.
+  Kallman, Jason~A. Simpson, Raymond~J. King, Jake~J. Abbott, and Mark~A.
+  Minor.
+\newblock Avian-inspired passive perching mechanism for robotic rotorcraft.
+\newblock In {\em 2011 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}, pages 4975--4980, 2011.
 
-\bibitem{FCTMin}
-Sangyul Park, Jeongseob Lee, Joonmo Ahn, Myungsin Kim, Jongbeom Her, Gi-Hun
-  Yang, and Dongjun Lee.
-\newblock Odar: Aerial manipulation platform enabling omnidirectional wrench
-  generation.
-\newblock {\em IEEE/ASME Transactions on Mechatronics}, Vol.~23, No.~4, pp.
-  1907--1918, 2018.
+\bibitem{tendondriven}
+Katie~M. Popek, Matthew~S. Johannes, Kevin~C. Wolfe, Rachel~A. Hegeman,
+  Jessica~M. Hatch, Joseph~L. Moore, Kapil~D. Katyal, Bryanna~Y. Yeh, and
+  Robert~J. Bamberger.
+\newblock Autonomous grasping robotic aerial system for perching (agrasp).
+\newblock In {\em 2018 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pages 1--9, 2018.
 
-\bibitem{wrench_est}
-A.~de~Luca and R.~Mattone.
-\newblock Sensorless robot collision detection and hybrid force/motion control.
-\newblock In {\em Proceedings of the 2005 IEEE International Conference on
-  Robotics and Automation}, pp. 999--1004, 2005.
+\bibitem{SNAG}
+W.~R.~T. Roderick, M.~R. Cutkosky, and D.~Lentink.
+\newblock Bird-inspired dynamic grasping and perching in arboreal environments.
+\newblock {\em Science Robotics}, 6(61):eabj7562, 2021.
+
+\bibitem{selfmass}
+Courtney~E. Doyle, Justin~J. Bird, Taylor~A. Isom, Jason~C. Kallman, Daman~F.
+  Bareiss, David~J. Dunlop, Raymond~J. King, Jake~J. Abbott, and Mark~A. Minor.
+\newblock An avian-inspired passive mechanism for quadrotor perching.
+\newblock {\em IEEE/ASME Transactions on Mechatronics}, 18(2):506--517, 2013.
+
+\bibitem{selfmass2}
+Courtney~E. Doyle, Justin~J. Bird, Taylor~A. Isom, C.~Jerald Johnson, Jason~C.
+  Kallman, Jason~A. Simpson, Raymond~J. King, Jake~J. Abbott, and Mark~A.
+  Minor.
+\newblock Avian-inspired passive perching mechanism for robotic rotorcraft.
+\newblock In {\em 2011 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}, pages 4975--4980, 2011.
+
+\bibitem{Ozawa}
+Ryuta Ozawa, Hiroaki Kobayashi, and Kazunori Hashirii.
+\newblock Analysis, classification, and design of tendon-driven mechanisms.
+\newblock {\em IEEE Transactions on Robotics}, 30(2):396--410, 2014.
+
+\bibitem{differential}
+Negin Nikafrooz and Alexander Leonessa.
+\newblock A single-actuated, cable-driven, and self-contained robotic hand
+  designed for adaptive grasps.
+\newblock {\em Robotics}, 10(4), 2021.
+
+\bibitem{eulerbelt}
+Shelley.~J. F.
+\newblock {\em Vector Mechanics for Engineers: Statics}.
+\newblock McGraw-Hill, New York, 1990.
+
+\bibitem{j-sugihara}
+Junichiro Sugihara, Moju Zhao, Takuzumi Nishio, Kei Okada, and Masayuki Inaba.
+\newblock Beatle - self-reconfigurable aerial robot: Design, control and
+  experimental validation, 2024.
+
+\bibitem{friction}
+Santiago Blandon, Juan Amaya, and Alvaro Rojas.
+\newblock Development of a 3d printer and a supervision system towards the
+  improvement of physical properties and surface finish of the printed parts.
+\newblock pages 1--7, 10 2015.
 
 \end{thebibliography}
