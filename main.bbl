@@ -1,46 +1,9 @@
-\begin{thebibliography}{10}
-
-\bibitem{observation}
-Rogerio Bonatti, Yanfu Zhang, Sanjiban Choudhury, Wenshan Wang, and Sebastian
-  Scherer.
-\newblock Autonomous drone cinematographer: Using artistic principles to create
-  smooth, safe, occlusion-free trajectories for aerial filming.
-\newblock In Jing Xiao, Torsten Kr{\"o}ger, and Oussama Khatib, editors, {\em
-  Proceedings of the 2018 International Symposium on Experimental Robotics},
-  pages 119--129, Cham, 2020. Springer International Publishing.
-
-\bibitem{disaster}
-Nathan Michael, Shaojie Shen, Kartik Mohta, Vijay Kumar, Keiji Nagatani,
-  Yoshito Okada, Seiga Kiribayashi, Kazuki Otake, Kazuya Yoshida, Kazunori
-  Ohno, Eijiro Takeuchi, and Satoshi Tadokoro.
-\newblock {\em Collaborative Mapping of an Earthquake Damaged Building via
-  Ground and Aerial Robots}, pages 33--47.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2014.
-
-\bibitem{overheadperching}
-Terry Ching, Joseph Zhi~Wei Lee, Shane Kyi~Hla Win, Luke Soe~Thura Win, Danial
-  Sufiyan, Charlotte Pei~Xuan Lim, Nidhi Nagaraju, Yi-Chin Toh, Shaohui Foong,
-  and Michinao Hashimoto.
-\newblock Crawling, climbing, perching, and flying by fiba soft robots.
-\newblock {\em Science Robotics}, 9(92):eadk4533, 2024.
-
-\bibitem{underhandperching}
-Kaiyu Hang, Ximin Lyu, Haoran Song, Johannes~A. Stork, Aaron~M. Dollar, Danica
-  Kragic, and Fu~Zhang.
-\newblock Perching and resting—a paradigm for uav maneuvering with
-  modularized landing gears.
-\newblock {\em Science Robotics}, 4(28):eaau6637, 2019.
+\begin{thebibliography}{1}
 
 \bibitem{horizon}
 William Stewart, Luca Guarino, Yegor Piskarev, and Dario Floreano.
 \newblock Passive perching with energy storage for winged aerial robots.
 \newblock {\em Advanced Intelligent Systems}, 5(4):2100150.
-
-\bibitem{horizon2}
-Raphael Zufferey, Jesus Tormo-Barbero, Daniel Feliu-Talegón, Saeed Nekoo,
-  J.~\'A Acosta, and Anibal Ollero.
-\newblock How ornithopters can perch autonomously on a branch.
-\newblock {\em Nature Communications}, 13, 12 2022.
 
 \bibitem{ultra}
 Andrew McLaren, Zak Fitzgerald, Geng Gao, and Minas Liarokapis.
@@ -48,14 +11,6 @@ Andrew McLaren, Zak Fitzgerald, Geng Gao, and Minas Liarokapis.
   aerial grasping and perching.
 \newblock In {\em 2019 IEEE/RSJ International Conference on Intelligent Robots
   and Systems (IROS)}, pages 5602--5607, 2019.
-
-\bibitem{armed}
-Courtney~E. Doyle, Justin~J. Bird, Taylor~A. Isom, C.~Jerald Johnson, Jason~C.
-  Kallman, Jason~A. Simpson, Raymond~J. King, Jake~J. Abbott, and Mark~A.
-  Minor.
-\newblock Avian-inspired passive perching mechanism for robotic rotorcraft.
-\newblock In {\em 2011 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems}, pages 4975--4980, 2011.
 
 \bibitem{tendondriven}
 Katie~M. Popek, Matthew~S. Johannes, Kevin~C. Wolfe, Rachel~A. Hegeman,
@@ -70,20 +25,6 @@ W.~R.~T. Roderick, M.~R. Cutkosky, and D.~Lentink.
 \newblock Bird-inspired dynamic grasping and perching in arboreal environments.
 \newblock {\em Science Robotics}, 6(61):eabj7562, 2021.
 
-\bibitem{selfmass}
-Courtney~E. Doyle, Justin~J. Bird, Taylor~A. Isom, Jason~C. Kallman, Daman~F.
-  Bareiss, David~J. Dunlop, Raymond~J. King, Jake~J. Abbott, and Mark~A. Minor.
-\newblock An avian-inspired passive mechanism for quadrotor perching.
-\newblock {\em IEEE/ASME Transactions on Mechatronics}, 18(2):506--517, 2013.
-
-\bibitem{selfmass2}
-Courtney~E. Doyle, Justin~J. Bird, Taylor~A. Isom, C.~Jerald Johnson, Jason~C.
-  Kallman, Jason~A. Simpson, Raymond~J. King, Jake~J. Abbott, and Mark~A.
-  Minor.
-\newblock Avian-inspired passive perching mechanism for robotic rotorcraft.
-\newblock In {\em 2011 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems}, pages 4975--4980, 2011.
-
 \bibitem{Ozawa}
 Ryuta Ozawa, Hiroaki Kobayashi, and Kazunori Hashirii.
 \newblock Analysis, classification, and design of tendon-driven mechanisms.
@@ -95,20 +36,9 @@ Negin Nikafrooz and Alexander Leonessa.
   designed for adaptive grasps.
 \newblock {\em Robotics}, 10(4), 2021.
 
-\bibitem{eulerbelt}
-Shelley.~J. F.
-\newblock {\em Vector Mechanics for Engineers: Statics}.
-\newblock McGraw-Hill, New York, 1990.
-
 \bibitem{j-sugihara}
 Junichiro Sugihara, Moju Zhao, Takuzumi Nishio, Kei Okada, and Masayuki Inaba.
 \newblock Beatle - self-reconfigurable aerial robot: Design, control and
   experimental validation, 2024.
-
-\bibitem{friction}
-Santiago Blandon, Juan Amaya, and Alvaro Rojas.
-\newblock Development of a 3d printer and a supervision system towards the
-  improvement of physical properties and surface finish of the printed parts.
-\newblock pages 1--7, 10 2015.
 
 \end{thebibliography}
