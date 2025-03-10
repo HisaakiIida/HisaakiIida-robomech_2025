@@ -86,7 +86,7 @@ Therefore, this study aims to design a three-fingered tendon-driven hand powered
 \vspace{\baselineskip}
 本論文の構成は以下のとおりである. 
 
-第2章では提案したハンドの力学モデルと機構の設計について述べる。第3章ではベース機体の制御について説明したのち、ペンデュラム・パーチング中の機体動作計画について述べる. 第4章では実際に制作したハンドを用いた物体把持能力の検証実験, および支持可能な重量の検証実験を行い, さらに第3章で述べた動作計画を用いてペンデュラム・パーチングを実行する. 最後に第5章で結論を述べる. 
+第2章では提案したハンドの力学モデルと機構の設計について述べる.第3章ではベース機体の制御について説明したのち, ペンデュラム・パーチング中の機体動作計画について述べる. 第4章では実際に制作したハンドを用いた物体把持能力の検証実験, および支持可能な重量の検証実験を行い, さらに第3章で述べた動作計画を用いてペンデュラム・パーチングを実行する. 最後に第5章で結論を述べる. 
 
 \section{ハンドの設計}
 \subsection{ハンドの力学モデル}
@@ -128,7 +128,7 @@ Therefore, this study aims to design a three-fingered tendon-driven hand powered
   \end{subfigure}
   \caption{Finger tendon arrangement}
 \end{figure}
-図\ref{fig:cftdm}に示すような一般の可制御完全腱駆動(CF-TDM)では, 関節数と自由度は同一であり, 関節数と同数以上のアクチュエータが必要となる. 従って機構全体の重量が大きく, 飛行ロボットへの搭載には適さない. そこで, 軽量かつ従動性を持ち少数のアクチュエータで駆動可能な腱駆動機構として, 本研究では図\ref{fig:cstdm}に示した可制御半腱駆動(CS-TDM)を用いる. CS-TDMは図\ref{fig:uftdm}\ref{fig:uptdm}に示した不可制御完全腱駆動(UF-TDM)と不可制御受動腱駆動(UP-TDM)を組み合わせた機構であり、劣駆動ながら物体把持に伴って形状が一意に定まる. そのため従動的に強い把持を行うことができ, 力学モデルは腱の伸長$\bm{l}$, 関節角度$\bm{\theta}$, アクチュエータ回転角度$\bm{\phi}$を用いて以下のように表される\cite{Ozawa}. 
+図\ref{fig:cftdm}に示すような一般の可制御完全腱駆動(CF-TDM)では, 関節数と自由度は同一であり, 関節数と同数以上のアクチュエータが必要となる. 従って機構全体の重量が大きく, 飛行ロボットへの搭載には適さない. そこで, 軽量かつ従動性を持ち少数のアクチュエータで駆動可能な腱駆動機構として, 本研究では図\ref{fig:cstdm}に示した可制御半腱駆動(CS-TDM)を用いる. CS-TDMは図\ref{fig:uftdm}\ref{fig:uptdm}に示した不可制御完全腱駆動(UF-TDM)と不可制御受動腱駆動(UP-TDM)を組み合わせた機構であり, 劣駆動ながら物体把持に伴って形状が一意に定まる. そのため従動的に強い把持を行うことができ, 力学モデルは腱の伸長$\bm{l}$, 関節角度$\bm{\theta}$, アクチュエータ回転角度$\bm{\phi}$を用いて以下のように表される\cite{Ozawa}. 
 \vspace{-2mm}
 \begin{equation}
   \left[ \begin{array}{c} \bm{l}_\text{a}\\ \bm{l}_\text{p} \end{array} \right] = \left[ \bm{J}_j \right] \bm{\dot{\theta}} + \left[ \bm{J}_s \right] \bm{\dot{\phi}} = \left[ \begin{array}{c} \bm{J}_\text{ja}\\ \bm{J}_\text{jp} \end{array} \right]  \bm{\dot{\theta}} + \left[ \begin{array}{c} \bm{J}_\text{sa}\\ \bm{0} \end{array} \right] \bm{\dot{\phi}}
@@ -248,7 +248,7 @@ $m_\text{maxa}$は$\alpha$の増加に伴って単調に減少するが, $\alpha
   \label{fig:coordinate}
   \vspace{-2mm}
 \end{figure}
-本研究で使用したベース機体は推力偏向機構を持つ8自由度の全駆動クアッドロータであり, 各ロータごとの固有座標系における2次元推力ベクトル$\bm{\lambda_i} = [\lambda_\text{i, x} \,  \lambda_\text{i, z}]$が定義される\cite{j-sugihara}. ここで、$\bm{\lambda_i}$を機体のCoG座標系における3次元ベクトル$^{\{C\}}\bm{\Lambda_i}$に変換する.
+本研究で使用したベース機体は推力偏向機構を持つ8自由度の全駆動クアッドロータであり, 各ロータごとの固有座標系における2次元推力ベクトル$\bm{\lambda_i} = [\lambda_\text{i, x} \,  \lambda_\text{i, z}]$が定義される\cite{j-sugihara}. ここで, $\bm{\lambda_i}$を機体のCoG座標系における3次元ベクトル$^{\{C\}}\bm{\Lambda_i}$に変換する.
 \vspace{-2mm}
 \begin{equation}
   ^{\{C\}}\bm{\Lambda_i} = ^{\{C\}}\bm{U}_{\{U_i\}} \, \bm{B} \, \bm{\lambda_i} = \bm{U'_i} \, \bm{\lambda_i}, \quad \bm{B} =
