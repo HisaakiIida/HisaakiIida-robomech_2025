@@ -1,5 +1,18 @@
 Use .eps for figures.
 
+How to install environment:
+```
+sudo apt update
+sudo apt install texlive-lang-japanese texlive-latex-extra texlive-science
+```
+Initial process:
+```
+rm -f main.aux main.bbl main.blg main.log main.dvi
+platex main.tex
+bibtex main
+platex main.tex
+platex main.tex
+```
 How to convert:
 ```
 convert figs/hoge.png eps3:figs/hoge.eps
