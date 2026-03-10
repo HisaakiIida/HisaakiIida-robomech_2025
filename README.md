@@ -13,7 +13,7 @@ bibtex main
 platex main.tex
 platex main.tex
 ```
-How to convert:
+How to convert figures:
 ```
 convert figs/hoge.png eps3:figs/hoge.eps
 ```
