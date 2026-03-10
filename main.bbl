@@ -1,44 +1,12 @@
 \begin{thebibliography}{1}
 
-\bibitem{horizon}
-William Stewart, Luca Guarino, Yegor Piskarev, and Dario Floreano.
-\newblock Passive perching with energy storage for winged aerial robots.
-\newblock {\em Advanced Intelligent Systems}, 5(4):2100150.
-
-\bibitem{ultra}
-Andrew McLaren, Zak Fitzgerald, Geng Gao, and Minas Liarokapis.
-\newblock A passive closing, tendon driven, adaptive robot hand for ultra-fast,
-  aerial grasping and perching.
-\newblock In {\em 2019 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems (IROS)}, pages 5602--5607, 2019.
-
-\bibitem{tendondriven}
-Katie~M. Popek, Matthew~S. Johannes, Kevin~C. Wolfe, Rachel~A. Hegeman,
-  Jessica~M. Hatch, Joseph~L. Moore, Kapil~D. Katyal, Bryanna~Y. Yeh, and
-  Robert~J. Bamberger.
-\newblock Autonomous grasping robotic aerial system for perching (agrasp).
-\newblock In {\em 2018 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems (IROS)}, pages 1--9, 2018.
-
-\bibitem{SNAG}
-W.~R.~T. Roderick, M.~R. Cutkosky, and D.~Lentink.
-\newblock Bird-inspired dynamic grasping and perching in arboreal environments.
-\newblock {\em Science Robotics}, 6(61):eabj7562, 2021.
-
-\bibitem{Ozawa}
-Ryuta Ozawa, Hiroaki Kobayashi, and Kazunori Hashirii.
-\newblock Analysis, classification, and design of tendon-driven mechanisms.
-\newblock {\em IEEE Transactions on Robotics}, 30(2):396--410, 2014.
-
-\bibitem{differential}
-Negin Nikafrooz and Alexander Leonessa.
-\newblock A single-actuated, cable-driven, and self-contained robotic hand
-  designed for adaptive grasps.
-\newblock {\em Robotics}, 10(4), 2021.
-
-\bibitem{j-sugihara}
-Junichiro Sugihara, Moju Zhao, Takuzumi Nishio, Kei Okada, and Masayuki Inaba.
-\newblock Beatle - self-reconfigurable aerial robot: Design, control and
-  experimental validation, 2024.
+\bibitem{observation}
+Rogerio Bonatti, Yanfu Zhang, Sanjiban Choudhury, Wenshan Wang, and Sebastian
+  Scherer.
+\newblock Autonomous drone cinematographer: Using artistic principles to create
+  smooth, safe, occlusion-free trajectories for aerial filming.
+\newblock In Jing Xiao, Torsten Kr{\"o}ger, and Oussama Khatib, editors, {\em
+  Proceedings of the 2018 International Symposium on Experimental Robotics},
+  pages 119--129, Cham, 2020. Springer International Publishing.
 
 \end{thebibliography}
