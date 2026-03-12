@@ -1,12 +1,75 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{observation}
-Rogerio Bonatti, Yanfu Zhang, Sanjiban Choudhury, Wenshan Wang, and Sebastian
-  Scherer.
-\newblock Autonomous drone cinematographer: Using artistic principles to create
-  smooth, safe, occlusion-free trajectories for aerial filming.
-\newblock In Jing Xiao, Torsten Kr{\"o}ger, and Oussama Khatib, editors, {\em
-  Proceedings of the 2018 International Symposium on Experimental Robotics},
-  pages 119--129, Cham, 2020. Springer International Publishing.
+\bibitem{wheelsnake}
+Thanniti Khunnithiwarawat and Thavida Maneewarn.
+\newblock A study of active-wheel snake robot locomotion gaits.
+\newblock In {\em 2011 IEEE International Conference on Robotics and
+  Biomimetics}, pages 2805--2809, 2011.
+
+\bibitem{pneumatic}
+Dimuthu Arachchige, Dulanjana Perera, Sanjaya Mallikarachchi, Iyad Kanj, Yue
+  Chen, and Isuru Godage.
+\newblock Wheelless soft robotic snake locomotion: Study on sidewinding and
+  helical rolling gaits.
+\newblock pages 1--6, 04 2023.
+
+\bibitem{bodymove}
+Pål Liljebäck, K.Y. Pettersen, Øyvind Stavdahl, and Jan Gravdahl.
+\newblock A review on modelling, implementation, and control of snake robots.
+\newblock {\em Robotics and Autonomous Systems}, 60:29–40, 01 2012.
+
+\bibitem{dragon}
+Moju Zhao, Tomoki Anzai, Fan Shi, Xiangyu Chen, Kei Okada, and Masayuki Inaba.
+\newblock Design, modeling, and control of an aerial robot dragon: A
+  dual-rotor-embedded multilink robot with the ability of
+  multi-degree-of-freedom aerial transformation.
+\newblock {\em IEEE Robotics and Automation Letters}, 3(2):1176--1183, 2018.
+
+\bibitem{perching}
+Luca Romanello, Tian Lan, Salaheldin Hassan, Maximilian Leutschafft, Erdem
+  Ekinci, Sophie~F. Armanini, Mirko Kovac, and Basaran~Bahadir Kocer.
+\newblock Treespider: In-canopy exploration with tether-based aerial modular
+  arms.
+\newblock {\em Advanced Robotics Research}, n/a(n/a):e202500111.
+
+\bibitem{perching2}
+Peter Zheng, Feng Xiao, Pham~Huy Nguyen, Andre Farinha, and Mirko Kovac.
+\newblock Metamorphic aerial robot capable of mid-air shape morphing for rapid
+  perching.
+\newblock {\em Scientific Reports}, 13(1):1297, 2023.
+
+\bibitem{morph}
+Valentin Riviere, Augustin Manecy, and Stéphane Viollet.
+\newblock Agile robotic fliers: A morphing-based approach.
+\newblock {\em Soft Robotics}, 5, 05 2018.
+
+\bibitem{ontheland}
+Ioannis Mandralis, Reza Nemovi, Alireza Ramezani, Richard~M. Murray, and
+  Morteza Gharib.
+\newblock {ATMO}: an aerially transforming morphobot for dynamic ground-aerial
+  transition.
+\newblock {\em Communications Engineering}, 4(1):74, 2025.
+
+\bibitem{tendonsnake}
+Serdar Incekara, Seongil Kwon, Gangil Kwon, and Junhyoung Ha.
+\newblock Tendon-driven compliant wheel-less snake robot for undulatory
+  locomotion using conformable ground contacts.
+\newblock {\em Advanced Intelligent Systems}, n/a(n/a):e202501183.
+
+\bibitem{oblique}
+Shigeo HIROSE, Shunta ODA, and Yoji UMETANI.
+\newblock Active cord mechanism with oblique swivel joints and its control.
+\newblock {\em Transactions of the Society of Instrument and Control
+  Engineers}, 17(6):686--692, 1981.
+
+\bibitem{ozawa}
+Ryuta Ozawa, Hiroaki Kobayashi, and Kazunori Hashirii.
+\newblock Analysis, classification, and design of tendon-driven mechanisms.
+\newblock {\em IEEE Transactions on Robotics}, 30(2):396--410, 2014.
+
+\bibitem{sugihara}
+Junichiro Sugihara, Moju Zhao, Takuzumi Nishio, Kei Okada, and Masayuki Inaba.
+\newblock Beatle - self-reconfigurable aerial robot: Design, control and
+  experimental validation, 2024.
 
 \end{thebibliography}

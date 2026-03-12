@@ -22,3 +22,8 @@ For compile:
 platex main.tex
 dvipdfmx main.dvi
 ```
+Tips: To compile easily, just type 'com' on CUI:
+```
+echo "alias com='platex main.tex && dvipdfmx main.dvi && evince main.pdf'" >> ~/.bashrc
+source ~/.bashrc
+```

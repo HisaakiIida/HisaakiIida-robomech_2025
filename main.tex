@@ -9,8 +9,8 @@
 
 \begin{document}
 \makeatletter
-\title{hogehoge}
-{hogehoge(English)}
+\title{脊椎様身体構造を有する腱駆動型可変系飛行ロボットの設計と制御}
+{Design and Control of a Morphing Aerial Robot \\ with Tendon-Driven Spine-Like Body Structure}
 % {―日本語副題：ゴシック体・12pt(欧文Arial・12pt)―}
 {}
 {}
@@ -18,7 +18,7 @@
 
 \author{
 \begin{tabular}{ll}
- \hspace{1zw}○ 学\hspace{1zw}飯田央明 (東京大)& 正\hspace{1zw} 趙漠居(東京大) \\ \hspace{1zw} 杉原淳一朗(東京大)& \hspace{1zw} 杉原和輝(東京大) \\ \hspace{1zw} 小塚陽希(東京大)& \hspace{1zw} 李謹傑(東京大) \\ \hspace{1zw} 長藤圭介(東京大)& \hspace{1zw}
+  \hspace{1zw}○ 学\hspace{1zw}飯田央明 (東京大)& 正\hspace{1zw} 趙漠居(東京大) \\ \hspace{1zw} 学\hspace{1zw}杉原淳一朗(東京大) \\
 %  \hspace{1zw}学\hspace{1zw}東京　学（西大）& [日本語著者名：明朝体10pt]\\
  % ※協賛・後援団体の会員資格で発表される場合は「正・学」は不要です.
  \end{tabular}
@@ -26,22 +26,19 @@
  \vspace{1zh} \\
  \begin{tabular}{l}
 {\small Hisaaki IIDA, University of Tokyo, iida@dragon.t.u-tokyo.ac.jp}\\
- {\small Moju ZHAO, University of Tokyo, }\\
- {\small Junichiro SUGIHARA, University of Tokyo,}
- ~{\small Kazuki SUGIHARA, University of Tokyo}\\
- {\small Haruki KOZUKA, University of Tokyo,}
- ~{\small Jinjie LI, University of Tokyo}\\
- {\small Keisuke NAGATO, University of Tokyo,}\\
+ {\small Moju ZHAO, University of Tokyo, chou@dragon.t.u-tokyo.ac.jp}\\
+ {\small Junichiro SUGIHARA, University of Tokyo, j-sugihara@dragon.t.u-tokyo.ac.jp}\\
 \end{tabular}
 }
 \makeatother
 
 \abstract{ \small 
-hogehoge
+Biological organisms with snake-like flexible bodies can drastically change their body shape and modes of motion according to the environment and behavior. Taking advantage of this property, various snake-like robots have been studied for deployment in diverse environments, including aerial, underwater, and arboreal settings, owing to their high degree of body flexibility. However, as ground or underwater robots, they remain fundamentally limited in environments where no physical foothold is available.
+To overcome this limitation, this study aims to enable operation in a wider range of environments by applying a flexible body structure to an aerial robot. However, there have been few prior studies on aerial robots whose main body structure itself is based on a snake-like flexible form. Furthermore, because there is generally a trade-off between complex deformability and weight, the development of a dedicated body structure and control method is essential for realizing flexible deformation in aerial robots, whose weight cannot be supported by the ground. Therefore, as an initial step, this study aims to design a morphing quadrotor equipped with a tendon-driven body capable of one-degree-of-freedom bending actuated by a small number of actuators. In addition, flight control for aerial deformation is presented.
 }
 
 \date{} % 日付を出力しない
-\keywords{aerial robot, mechanical hand, tendon driven, perching, grasping}
+\keywords{aerial robot, tendon driven, morphing}
 
 \maketitle
 \thispagestyle{empty}
@@ -49,20 +46,197 @@ hogehoge
 
 \small
 \section{序論}
-序\cite{observation}
+虫や鳥などの生物の構造や生態を模倣するバイオミメティクスロボティクスにおいて、ヘビ型ロボットは大きな分野として古くから広く研究されてきた。移動手段としても車輪\cite{wheelsnake}や空気圧\cite{pneumatic}、くねり推進\cite{bodymove}などの多くの手法が提唱されており、その活動領域は地上移動にとどまらず樹上や水中などに拡大している。また、原子力発電所や災害救助などの極限環境で使用されるケースも多く存在し、さまざまな環境で活動可能なロバスト性を備えていると言える。
+
+このような多環境での活動可能性を追求する研究として、飛行ロボットの分野では、ロータに自由度を加えた全駆動化などが行われてきた。その中でも、複数のリンクを繋げることで変形自由度を加えた多関節飛行ロボットは他種のロボットに比べ、より高い環境適応性を持つ。さらにZhaoらによるDRAGON\cite{dragon}などの飛行ロボットは機体の姿勢だけでなくリンクごとに推力方向の配置を変えられるため、狭い隙間の通過、障害物回避、接触を伴う作業などへの対応能力が高い。
+
+一方で、これらの飛行ロボットはサーボモータを用いた関節により剛体リンクを接続する構造を持つため、関節を駆動するアクチュエータへのトルク集中が避けられない。この特性により、機体変形を通じて外部に力を発揮するような場合にはアクチュエータに大きな負荷がかかるなどの問題が生じうる。しかし、より強い関節アクチュエータの使用は大型化・高重量化に直結するため、飛行ロボットには向かない。そこで本研究では多関節飛行ロボットにヘビ型ロボットの構造を応用し、関節を細かく分散することで関節アクチュエータへのトルク集中を避け、より軽量でありながら高パワーを発揮可能な機体を作成することを目指す。これにより、従来研究と比較してより自由な変形や環境/物体との接触に対する許容性が増加することが推測される。
+
+変形可能なボディを備えた飛行ロボットとして、前述の多関節飛行ロボット以外にもいくつかの先行研究が存在する。それらの多くは機体のベースとなる剛体リンクとロータとの間に柔軟物体や回転関節を備えることで、パーチング\cite{perching}\cite{perching2}や狭隘部通過\cite{morph}、地上走行形態への変形\cite{ontheland}などを実現したものであるが、本研究はベースリンクである機体そのものを変形させることを目的とするため、目的がやや異なる。また、これらの研究における飛行ロボットは構造的に安定な形態で飛行し、そこから変形を行うものが多い。
+
+一方、ヘビ型ロボットではすでに多くの変形システムが存在し、主な身体駆動機構として直接関節駆動\cite{wheelsnake}、空気圧駆動\cite{pneumatic}、腱駆動\cite{tendonsnake}、斜回転駆動\cite{oblique}などが挙げられる。しかし直接関節駆動・斜回転駆動は重量およびサイズ、空気圧駆動はパワーおよびエア供給必要性の観点から、地上ロボットには適しているものの、飛行ロボットには向かない。他方で腱駆動機構にはこれらの明確な弱点が存在せず、外力に対する高い許容性・サーボ個数を削減する多くの機構パターンを備えているため、飛行ロボットに適した設計を行うことでボディの変形機構として利用可能であると考えられる。
+
+よって本研究では、少数のアクチュエータにより駆動され、大規模な変形可能性と十分な強度を両立したボディを持つ飛行ロボットの設計を行う。
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/initial.eps}
+  \caption{Aerial robot with Spine-like body structure}
+  \label{fig:initial}
+  \vspace{-5mm}
+\end{figure}
+単一のボディを2自由度以上の複雑な形状に変形させるためには、腱駆動を用いても多くのアクチュエータが必要となる。そのため、本研究では単純に変形するリンクを複数接続することで全体として複雑に変形可能な機体構成を採用する。また、研究の第一歩としてそのうちの1リンクに相当する部分を取り出し、二次元平面内での1自由度の屈曲変形が可能な連続体ボディを備えたクアッドロータを設計する。加えて、前述の変形機構をコントロールし、任意形状に変形するための機体制御を開発する。
 
 \vspace{\baselineskip}
-本論文の構成は以下のとおりである. 
+本論文の構成は以下のとおりである.
 
-第2章では提案したハンドの力学モデルと機構の設計について述べる.第3章ではベース機体の制御について説明したのち, ペンデュラム・パーチング中の機体動作計画について述べる. 第4章では実際に制作したハンドを用いた物体把持能力の検証実験, および支持可能な重量の検証実験を行い, さらに第3章で述べた動作計画を用いてペンデュラム・パーチングを実行する. 最後に第5章で結論を述べる. 
+第2章では提案したボディの変形機構、および機体全体の設計について述べる。第3章ではベース機体の制御について説明したのち、変形のための機体制御について述べる。第4章では実際に制作した機体を用いた飛行試験および変形のシミュレーションを行う。最後に第5章で結論を述べる。
 
 \section{設計}
+\vspace{-3mm}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.9\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/Spine.eps}
+    \vspace{-8mm}
+    \caption{Tendon-driven mechanisms}
+    \label{fig:Spine}
+  \end{subfigure}
+  \begin{subfigure}{0.9\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/Spinegata.eps}
+    \vspace{-8mm}
+    \caption{Vibrations that are difficult for CS-TDM to restrict}
+    \label{fig:Spinegata}
+  \end{subfigure}
+  \vspace{-2mm}
+\end{figure}
+\subsection{連続体様ボディ『Spine』の駆動方式と設計}
+腱駆動にはアクチュエータ・駆動腱・受動腱の組み合わせによって複数の機構パターンが存在し、一般に制御可能な自由度が高まるほどアクチュエータ数も増加する。腱駆動マニピュレータ等で多く用いられる可制御完全腱駆動(CF-TDM)は全関節が制御可能だが、アクチュエータ数は関節数以上となるため重量が大きくなる。そこで、本研究で目指す1自由度の屈曲変形を可能としつつアクチュエータ数の少ない機構として、可制御半腱駆動(CS-TDM)を採用する\cite{ozawa}。
+
+当該機構は不可制御受動腱駆動(UP-TDM)と不可制御完全腱駆動(UF-TDM)を重ねることで、連結された全関節が連動する劣駆動性を持つ代わりに2つのアクチュエータのみで全体の形状を制御することが可能となる。それぞれの機構の概略を図\ref{fig:Spine}に、CS-TDMの力学モデル式を以下に示す。
+\begin{equation}
+  \left[ \begin{array}{c} \bm{l}_\text{a}\\ \bm{l}_\text{p} \end{array} \right] = \left[ \bm{J}_j \right] \bm{\dot{\theta}} + \left[ \bm{J}_s \right] \bm{\dot{\phi}} = \left[ \begin{array}{c} \bm{J}_\text{ja}\\ \bm{J}_\text{jp} \end{array} \right]  \bm{\dot{\theta}} + \left[ \begin{array}{c} \bm{J}_\text{sa}\\ \bm{0} \end{array} \right] \bm{\dot{\phi}}
+  \vspace{-2mm}
+  \label{equ:lmatrix}
+\end{equation}
+ここで、$\bm{J}_j$および$\bm{J}_s$はボディ関節および動力部のプーリ径を要素に持つ幾何要素行列である。また、駆動腱に関する要素は添字$a$、受動腱に関する要素は添字$p$で示す。腱の伸縮が無視でき、ボディ関節プーリ径$R_1, R_2, ...R_n$が等しいと仮定した場合において、力学モデル式の受動腱部分を積分変形・整理したものを以下に示す。
+\begin{equation}
+  \bm{0} = \left[ \begin{array}{ccccc} R_1 & 0 & 0 & \cdots &0 \\
+      0 & R_1 & 0 & \cdots & 0 \\
+      0 & 0 & R_1 & \cdots & 0 \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & 0 & \cdots & R_1
+  \end{array} \right]
+  \left[ \begin{array}{c} \theta_1 - \theta_2 \\
+      \theta_2 - \theta_3 \\
+      \theta_3 - \theta_4 \\
+      \vdots \\
+      \theta_\text{n-1}-\theta_\text{n}
+  \end{array} \right]
+  \label{passivematrixshort}
+  \vspace{-2mm}
+\end{equation}
+$R_1$は正の実数であることから、$\theta_1, \theta_2, ...\theta_n$はすべて等しくなければならないことが示される。よって、CS-TDMを組み込んだボディは腱の巻き取りに伴い、直線形状から円弧形状への1自由度の変形を行うことが可能となる。これを用いて、本研究では図\ref{fig:Spinegata}のように7個のボディ構成パーツを連結し、両端に設けた2つのアクチュエータとステンレスワイヤにより拮抗腱駆動機構を構成する。以降、本機構をSpineもしくはボディと呼称する。
+
+CS-TDMは関節の回転によりプーリにワイヤが巻き取られ、それによって隣接する関節が回転することで連動拘束を実現する。一方でプーリやワイヤの固定にはわずかな緩みが存在するため、腱伸長の少ない動きに対して連動拘束力が弱くなりやすい。例として、図に示すような両端の並行移動を厳密に拘束することは難しい。この特性により、飛行中に慣性の大きいロータユニットがSpineの中心軸と垂直な方向へずれやすく、内部モデルと実際の機体形状に差異が生じ不安定な飛行につながりやすくなると推測される。
+
+この現象を防ぐための方策として、受動腱と接触する関節プーリの大径化が挙げられる。厳密な理論上において関節プーリ径は安定性に影響を及ぼさないが、実際の機体においてはプーリ径が大きいほどワイヤが直線形状から離れるため、バネ復元力によりプーリとワイヤの摩擦が大きくなる。また関節軸周りの拘束モーメント$\tau$、腱張力$T$、プーリ径$R$は
+\begin{equation}
+  \tau = RT
+  \label{equ:moment}
+\end{equation}
+という関係にあるため、増加した摩擦により滑りが起こらないと仮定すると、同一の張力でもプーリ径が大きいほど関節拘束モーメントは大きくなり、ずれに対する復元作用が増加する。プーリ大径化の安定性影響の実証については、第4章で詳しく述べる。
+
+\subsection{機体設計}
+\vspace{-3mm}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.47\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/abstall.eps}
+    \caption{Aircraft design overview}
+    \label{fig:abstall}
+  \end{subfigure}
+  \vspace{-2mm}
+  \begin{subfigure}{0.47\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/ushape.eps}
+    \caption{Singular posture}
+    \label{fig:ushape}
+  \end{subfigure}
+  \vspace{-1mm}
+\end{figure}
+本研究では、Spineの両端に2つずつのロータを設けたクアッドロータ機体をベースとして設計する。また前項で述べた通り、Spineは1自由度の変形が可能であるが、それ単体では変形自由度が低い。しかし、Spineを中心軸周りに回転させる自由度と組み合わせることで、見かけ上2自由度の屈曲変形を行うことが可能となる。よって、図\ref{fig:abstall}に示すようにクアッドロータを2つのロータユニットに分割し、サーボを用いて回転可能なボディで結合した機体構造を基礎とする。
+
+また、元となるクアッドロータが劣駆動方式である場合、例として図\ref{fig:ushape}のようにxz平面内でSpineを$\pi$まで屈曲させるとき、ロータはz軸方向への推力を発生し得ず、飛行が不可能となる。そこで、各ロータの根本に回転自由度を持たせて自由度を8に増加させ全駆動化することにより、特異な姿勢における機体の飛行可能性と安定性を確保する。
 
 \section{飛行動作設計}
+\vspace{-3mm}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.55\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/rotor_coord.eps}
+    \vspace{-7mm}
+    \caption{Rotor unit coordinate $U_i$}
+    \label{fig:rotor_coord}
+  \end{subfigure}
+  \begin{subfigure}{0.42\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/controlmodel.eps}
+    \vspace{-7mm}
+    \caption{Control models}
+    \label{fig:controlmodel}
+  \end{subfigure}
+  \vspace{-2mm}
+\end{figure}
+\subsection{機体の基本制御}
+前章までで述べたとおり、本研究では機体構成として、各ロータに1自由度の推力偏向機構を備えた全駆動クアッドロータを用いる。それぞれのロータは図\ref{fig:rotor_coord}に示すような固有座標系$U_i$を持つため、そのxz平面における二次元推力ベクトル$^{\{U_i\}}\bm{\lambda}_i$および変換行列$\bm{U'}_i$により全体座標系$C$における三次元推力ベクトル$^{\{C\}}\bm{\Lambda}_i$を定義する。それらをまとめた推力行列を$^{\{C\}}\bm{\Lambda}$と書くと、機体が発揮する推力とトルクをまとめたWrench行列$^{\{C\}}\bm{W}$は各ロータ位置ベクトル、ロータ回転方向、カウンタートルク等の幾何的要素を含んだ行列$\bm{Q}$を用いて以下のように書き表される\cite{sugihara}。
+\begin{align}
+  \centering
+  & ^{\{C\}}\bm{\Lambda}_i = \bm{U'}_i \bm{\lambda}_i, \\
+  & ^{\{C\}}\bm{\Lambda} = [^{\{C\}}\bm{\Lambda}_1^T \quad ^{\{C\}}\bm{\Lambda}_2^T \quad ^{\{C\}}\bm{\Lambda}_3^T \quad ^{\{C\}}\bm{\Lambda}_4^T], \\
+  & ^{\{C\}}\bm{W} = [^{\{C\}}\bm{f} \quad ^{\{C\}}\bm{\tau}] = \bm{Q}^{\{C\}}\bm{\Lambda} \label{equ:base}
+\end{align}
+よって、所望のWrench行列$\bm{W}^{des}$から$^{\{U_i\}}\bm{\lambda}_i$を求めることで、機体が発揮可能な範囲の全体推力および全体トルクから、個々のロータがとる推力値$\lambda_i^{\text{out}} = \|^{\{U_i\}}\bm{\lambda}_i\|$および偏向角度$\beta_i = atan2(\lambda_{i, x}, \lambda_{i, z})$が決定される。
+\subsection{変形制御}
+ベースとして使用している飛行制御システムは、機体モデルをもとにロータ間の位置関係を求め、姿勢をコントロールするものである。よって、関節角度の情報を指示することで機体モデルを変更し、ロータの推力および偏向角度を逐次計算することで変形後も飛行することが可能となる。またSpineの屈曲・回転速度は飛行制御周期と比較して十分に遅いため、変形中の機体は各制御ステップにおいて剛体とみなせる。ゆえに、本機体は図\ref{fig:controlmodel}のように従来の多関節飛行ロボットの関節を複数に分割したものとみなすことができ、等価な制御モデルで記述できると言える。従って、全駆動多関節飛行ロボットの制御システムを適用することが可能である。
+
+通常の飛行制御においては式\eqref{equ:base}における$\bm{W}^{des}$を更新することで推力を算出する。一方、可変形機体においては機体の変形情報を送信することで幾何情報行列$\bm{Q}$を同時に更新し、各ステップ・機体姿勢における推力を算出する。この制御方式を用いた変形シミュレーションについては、第4章において詳しく述べる。
 
 \section{実験}
+\subsection{実機の制作と実装}
+\vspace{-3mm}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/overall_real.eps}
+  \caption{Overview of the actual aircraft}
+  \label{fig:overall_real}
+  \vspace{-3mm}
+\end{figure}
+3Dプリンタ素材とCFRPパイプを用いて機体を制作した。アクチュエータにはDynamixel XL430-W250-TおよびXM430-W350-Rを使用し、腱として1.5mm径のステンレスワイヤを用いた。またボディ部分は前後のロータユニットを5つの接続パーツで連結し、体内にケーブルを通すため軸方向の回転はタイミングベルトを介して行い、IMUを備えたマイコン基板とオンボードPCをSpineの端部に搭載した。実際に制作した機体の全体図と各部名称を図\ref{fig:overall_real}に示す。
+\subsection{ホバリング試験}
+\vspace{-3mm}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/graph.eps}
+  \caption{CoG position \& orientation plot during hovering}
+  \label{fig:graph}
+  \vspace{-3mm}
+\end{figure}
+当初制作した直径15mmの関節プーリ径を持つ機体はボディの振動が大きく飛行不可能であったため、第二章の末尾に示した理論に基づき、関節プーリ径を30mmに拡大した機体を用いてホバリング試験を行った。機体重心の位置および姿勢のプロットを図\ref{fig:graph}に示す。
 
+プロットから読み取れるとおり、x軸方向の位置誤差はおよそ5cm, y, z軸方向の位置誤差はおよそ10cmであった。またroll, pitch, yaw方向の角度誤差はそれぞれおよそ0.35rad, 0.11rad, 0.12radであった。rollに比較的大きな誤差が出ているが、これは機体の長手方向がx軸に向いており、構造特性上roll方向への回転モーメントを発生しづらいためと推測される。加えて、roll方向に大きく振れた影響で推力の大きさや方向が頻繁に変わり、推力の水平・垂直分力が安定しにくいため、y, z軸方向にも位置誤差が生じたと考えられる。
+
+また、ホバリング中の過負荷に伴ってSpine屈曲サーボのオーバーロードおよび脱力が生じる現象が観察されたが、より大きなストールトルクを持つサーボへの交換により長時間のホバリングでも脱力現象はみられなくなった。
+\subsection{空中変形シミュレーション}
+\vspace{-3mm}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.47\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/bend.eps}
+    \vspace{-5mm}
+    \caption{Spine bending}
+    \label{fig:bend}
+    \vspace{2mm}
+  \end{subfigure}
+  \begin{subfigure}{0.47\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/bendroll.eps}
+    \vspace{-5mm}
+    \caption{Spine roll rotation}
+    \label{fig:bendroll}
+    \vspace{2mm}
+  \end{subfigure}
+  \begin{subfigure}{0.95\columnwidth}
+    \includegraphics[width=\columnwidth]{figs/graph2.eps}
+    \vspace{-6mm}
+    \caption{CoG position \& orientation plot during Spine morphing}
+    \label{fig:graph2}
+  \end{subfigure}
+  \vspace{-2mm}
+\end{figure}
+gazeboシミュレーション環境において、第3章で述べた変形制御を実装し、飛行状態での機体変形を実証した。図\ref{fig:bend}, \ref{fig:bendroll}にSpineを屈曲させた状態、およびroll方向への回転を行った状態を示し、図\ref{fig:graph2}に機体重心の位置および姿勢のプロットを示す。図\ref{fig:graph2}の(1)-(2)ではSpineを屈曲させる操作を、(2)-(3)ではSpineをroll方向に回転させる操作を行った。
+
+いずれの変形においても、大きく姿勢を崩すことなくホバリングおよび空中定位が可能であったが、Spine回転変形よりも屈曲変形を行った部分において、位置・姿勢ともに明確な誤差が見られた。これは屈曲変形の過程において機体重量の大部分を占めるロータユニットが大きく動くため、慣性により大きな反力が発生し、機体全体の振れが起こっているためであると考えられる。一方、回転変形においては屈曲変形ほど瞬時の大変形が生じないため、振れが小さく抑えられたと推測する。
 \section{結論と今後の展望}
+本研究では、腱駆動機構を用いて変形可能な連続体様ボディを有する可変形全駆動飛行ロボットを提案した。少数アクチュエータで駆動可能な可制御半腱駆動機構を利用したボディを設計し、誤差の少ない堅牢な身体構造を実現した。また、多関節飛行ロボットの制御モデルを応用した機体制御により、飛行中に三次元的な変形が可能であることを示した。さらに実際に制作した機体が安定して飛行可能であることを示した。
+
+提案した機体に関して、いくつかの課題が存在する。Spineの変形について、roll方向への回転変形に伴うロータユニットの移動位置が完璧でないため、大きな変形を行うと多少の振れが生じる。より厳密に多関節飛行ロボットの制御モデルに落とし込むことで、最適化問題を解き、ロータユニットを最も安定な姿勢に保つことが可能となる。また具体的なタスクとして、物体の形状に沿った変形による運搬作業や狭隘所の通過などの実行を目指す。さらに、将来的には複数のリンクを接続してより長い機体を制作し、自由度の高い複雑な変形や自律変形の実行を目指す。
 
 \footnotesize
 % \begin{thebibliography}{99}
